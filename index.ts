@@ -68,7 +68,7 @@ const matching_engine = (order: any) => {
 
             return {
               orderId: Math.random() * 100,
-              status: 'Fully filled',
+              status: 'filled',
               reason: 'order fully filled',
               fills,
               remainingQuantity: 0,
@@ -299,7 +299,7 @@ cancelledQuantity
 margin
 reason
 */
-  res.status(200).json({ message: 'Order created successfully', data: filled });
+  res.status(200).json(filled);
 });
 
 app.get('/api/orderbook/:symbol', (req, res) => {
